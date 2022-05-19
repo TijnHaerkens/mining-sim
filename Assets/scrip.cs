@@ -6,7 +6,7 @@ public class scrip : MonoBehaviour
 {
     int x;
     public GameObject bar;
-   public Rigidbody RB;
+    public ParticleSystem explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class scrip : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 v3Velocity = RB.velocity;
+       
     }
     // Update is called once per frame
     void OnTriggerEnter(Collider collision)
@@ -22,13 +22,16 @@ public class scrip : MonoBehaviour
         if(collision.gameObject.tag == ("pickaxe"))
         {
             x++;
+            explosion.Play();
         }
                 if(x == 3)
         {
+            explosion.Play();
             Debug.Log("mined");
-         //   Vector3 appel = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
+            //   Vector3 appel = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
             Instantiate(bar,transform.position, transform.rotation);
             Destroy(gameObject);
+            
             
         }
        
