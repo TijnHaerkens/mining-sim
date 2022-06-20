@@ -23,7 +23,7 @@ public class forge : MonoBehaviour
         {
             Debug.Log("smelting");
             var block = GameObject.FindWithTag("bar");
-            Vector3 appel = new Vector3(collision.transform.position.x + 1f, collision.transform.position.y, collision.transform.position.z);
+            Vector3 appel = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
             Instantiate(lava, appel, transform.rotation);
             Destroy(block);
             
